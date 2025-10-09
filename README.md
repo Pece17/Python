@@ -39,7 +39,7 @@ Hello, World!
 PS C:\Users\Business>
 ```
 
-**VS Code** and **Python** seems to work correctly, so I can move on to more complex exercises.
+**VS Code** and **Python** seem to work correctly, so I can move on to more complex exercises.
 
 
 ## Placeholder Title
