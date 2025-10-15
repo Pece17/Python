@@ -47,7 +47,7 @@ PS C:\Users\Business>
 
 I've been learning the basics of **Python** for a few days now mainly via [W3Schools](https://www.w3schools.com/python/), and I'm interested in trying to create a small and relatively simple program. I often have a hard time decising a movie to watch from my watchlist, so I'm thinking a movie tournament **Python** program could be a fun and even useful idea.
 
-The idea is to have 8 or 16 movies that are first entered to the program by typing or retrieved from a list, and then they're randomly paired into 4 or 8 pairs. There will be:
+The idea is to have 8 or 16 movies that are first entered into the program by typing or by retrieving from a list, and then they're randomly paired into 4 or 8 pairs. There will be:
 
 - Round of 16 (if there are 16 movies)
 - Quarterfinals
@@ -56,3 +56,24 @@ The idea is to have 8 or 16 movies that are first entered to the program by typi
 
 The user will choose the winner from each pair by selecting **1** or **2** until there are only 2 movies left, after which the winner is declared. After this, the program should ask the user whether they want to create another tournament or to terminate the program. I start by creating **movie_tournament.py** file in **VS Code**. This is apparently the correct syntax for **Python** programs, using all-lowercase with optional underscores for readability.
 
+To make it simpler, I'm going to make the tournament for only 8 movies at first. I can scale up later if necessary. This is the starting point for the code, 8 **variables** for 8 movies with **input functions**:
+
+```
+movie1 = input("Please, enter the 1st movie: ")
+movie2 = input("Please, enter the 2nd movie: ")
+movie3 = input("Please, enter the 3rd movie: ")
+movie4 = input("Please, enter the 4th movie: ")
+movie5 = input("Please, enter the 5th movie: ")
+movie6 = input("Please, enter the 6th movie: ")
+movie7 = input("Please, enter the 7th movie: ")
+movie8 = input("Please, enter the 8th movie: ")
+```
+
+The code works as intended, and the output looks like this:
+
+```
+PS C:\Users\Business> & C:/Users/Business/AppData/Local/Programs/Python/Python38-32/python.exe c:/Users/Business/movie_tournament.py
+Please, enter the 1st movie: The Last Samurai
+Please, enter the 2nd movie: The Informant
+Please, enter the 3rd movie: 
+```
