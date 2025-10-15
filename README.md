@@ -78,4 +78,6 @@ Please, enter the 2nd movie: The Informant
 Please, enter the 3rd movie: 
 ```
 
+Though, this is probably not the most elegant way to code, especially if there would be many more **variables** to input. A some kind of dynamic method might be ideal, but this will do for this program.
+
 Now we need to somehow shuffle/randomize the 8 movies into 4 pairs.
