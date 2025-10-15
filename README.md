@@ -6,7 +6,7 @@ A project for learning the basics of **Python** programming language. My purpose
 ## Table of Contents
 
 - [Software Installation and Setup](https://github.com/Pece17/Python?tab=readme-ov-file#software-installation-and-setup)
-- [Creating a Movie Tournament Program](https://github.com/Pece17/Python/edit/main/README.md#creating-a-movie-tournament-program)
+- [Creating a Movie Tournament Program](https://github.com/Pece17/Python/blob/main/README.md#creating-a-movie-tournament-program)
 
 
 ## Software Installation and Setup
