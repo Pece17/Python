@@ -54,5 +54,5 @@ The idea is to have 8 or 16 movies that are first entered to the program by typi
 - Semifinals
 - Final
 
-The user will choose the winner from each pair by selecting **1** or **2** until there are only 2 movies left, after which the winner is declared. After this, the program should ask the user whether they want to create another tournament or to terminate the program.
+The user will choose the winner from each pair by selecting **1** or **2** until there are only 2 movies left, after which the winner is declared. After this, the program should ask the user whether they want to create another tournament or to terminate the program. I start by creating **movie_tournament.py** file in **VS Code**. This is apparently the correct syntax for **Python** programs, using all-lowercase with optional underscores for readability.
 
