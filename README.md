@@ -6,6 +6,7 @@ A project for learning the basics of **Python** programming language. My purpose
 ## Table of Contents
 
 - [Software Installation and Setup](https://github.com/Pece17/Python?tab=readme-ov-file#software-installation-and-setup)
+- [Creating a Movie Tournament Program](https://github.com/Pece17/Python/edit/main/README.md#creating-a-movie-tournament-program)
 
 
 ## Software Installation and Setup
@@ -42,4 +43,16 @@ PS C:\Users\Business>
 **VS Code** and **Python** seem to work correctly, so I can move on to more complex exercises.
 
 
-## Placeholder Title
+## Creating a Movie Tournament Program
+
+I've been learning the basics of **Python** for a few days now mainly via [W3Schools](https://www.w3schools.com/python/), and I'm interested in trying to create a small and relatively simple program. I often have a hard time decising a movie to watch from my watchlist, so I'm thinking a movie tournament **Python** program could be a fun and even useful idea.
+
+The idea is to have 8 or 16 movies that are first entered to the program by typing or retrieved from a list, and then they're randomly paired into 4 or 8 pairs. There will be:
+
+- Round of 16 (if there are 16 movies)
+- Quarterfinals
+- Semifinals
+- Final
+
+The user will choose the winner from each pair by selecting **1** or **2** until there are only 2 movies left, after which the winner is declared. After this, the program should ask the user whether they want to create another tournament or to terminate the program.
+
