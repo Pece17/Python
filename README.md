@@ -77,3 +77,5 @@ Please, enter the 1st movie: The Last Samurai
 Please, enter the 2nd movie: The Informant
 Please, enter the 3rd movie: 
 ```
+
+Now we need to somehow shuffle/randomize the 8 movies into 4 pairs.
