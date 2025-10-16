@@ -7,6 +7,7 @@ A project for learning the basics of **Python** programming language. My purpose
 
 - [Software Installation and Setup](https://github.com/Pece17/Python?tab=readme-ov-file#software-installation-and-setup)
 - [Creating a Movie Tournament Program](https://github.com/Pece17/Python/blob/main/README.md#creating-a-movie-tournament-program)
+- [Refining the Movie Tournament Program]()
 
 
 ## Software Installation and Setup
@@ -274,3 +275,173 @@ random.shuffle(movies_final)
 movie_final1 = movies_final[0]
 movie_final2 = movies_final[1]
 ```
+
+Lastly, I use the previous matchup logic for the grand final:
+
+```
+choice_final = input(f"Choose the winner of this movie tournament by entering (1) for {movie_final1} or (2) for {movie_final2}: ")
+
+if choice_final == "1":
+    winner_final = movie_final1
+    print(f"The winner of this movie tournament is {movie_final1}! Enjoy the movie!")
+elif choice_final == "2":
+    winner_final = movie_final2
+    print(f"The winner of this movie tournament is {movie_final2}! Enjoy the movie!")
+else:
+    print("Invalid choice.")
+```
+
+Here's the whole shebang:
+
+```
+movie1 = input("Please, enter the 1st movie: ")
+movie2 = input("Please, enter the 2nd movie: ")
+movie3 = input("Please, enter the 3rd movie: ")
+movie4 = input("Please, enter the 4th movie: ")
+movie5 = input("Please, enter the 5th movie: ")
+movie6 = input("Please, enter the 6th movie: ")
+movie7 = input("Please, enter the 7th movie: ")
+movie8 = input("Please, enter the 8th movie: ")
+
+movies_quarterfinals = [movie1, movie2, movie3, movie4, movie5, movie6, movie7, movie8]
+
+import random
+
+random.shuffle(movies_quarterfinals)
+
+movie_quarterfinals1 = movies_quarterfinals[0]
+movie_quarterfinals2 = movies_quarterfinals[1]
+movie_quarterfinals3 = movies_quarterfinals[2]
+movie_quarterfinals4 = movies_quarterfinals[3]
+movie_quarterfinals5 = movies_quarterfinals[4]
+movie_quarterfinals6 = movies_quarterfinals[5]
+movie_quarterfinals7 = movies_quarterfinals[6]
+movie_quarterfinals8 = movies_quarterfinals[7]
+
+choice1_quarterfinals = input(f"Choose the winner of this matchup by entering (1) for {movie_quarterfinals1} or (2) for {movie_quarterfinals2}: ")
+
+if choice1_quarterfinals == "1":
+    winner1_quarterfinals = movie_quarterfinals1
+    print(f"The winner is {movie_quarterfinals1}!")
+elif choice1_quarterfinals == "2":
+    winner1_quarterfinals = movie_quarterfinals2
+    print(f"The winner is {movie_quarterfinals2}!")
+else:
+    print("Invalid choice.")
+
+choice2_quarterfinals = input(f"Choose the winner of this matchup by entering (1) for {movie_quarterfinals3} or (2) for {movie_quarterfinals4}: ")
+
+if choice2_quarterfinals == "1":
+    winner2_quarterfinals = movie_quarterfinals3
+    print(f"The winner is {movie_quarterfinals3}!")
+elif choice2_quarterfinals == "2":
+    winner2_quarterfinals = movie_quarterfinals4
+    print(f"The winner is {movie_quarterfinals4}!")
+else:
+    print("Invalid choice.")
+
+choice3_quarterfinals = input(f"Choose the winner of this matchup by entering (1) for {movie_quarterfinals5} or (2) for {movie_quarterfinals6}: ")
+
+if choice3_quarterfinals == "1":
+    winner3_quarterfinals = movie_quarterfinals5
+    print(f"The winner is {movie_quarterfinals5}!")
+elif choice3_quarterfinals == "2":
+    winner3_quarterfinals = movie_quarterfinals6
+    print(f"The winner is {movie_quarterfinals6}!")
+else:
+    print("Invalid choice.")
+
+choice4_quarterfinals = input(f"Choose the winner of this matchup by entering (1) for {movie_quarterfinals7} or (2) for {movie_quarterfinals8}: ")
+
+if choice4_quarterfinals == "1":
+    winner4_quarterfinals = movie_quarterfinals7
+    print(f"The winner is {movie_quarterfinals7}!")
+elif choice4_quarterfinals == "2":
+    winner4_quarterfinals = movie_quarterfinals8
+    print(f"The winner is {movie_quarterfinals8}!")
+else:
+    print("Invalid choice.")
+
+movies_semifinals = [winner1_quarterfinals, winner2_quarterfinals, winner3_quarterfinals, winner4_quarterfinals]
+
+random.shuffle(movies_semifinals)
+
+movie_semifinals1 = movies_semifinals[0]
+movie_semifinals2 = movies_semifinals[1]
+movie_semifinals3 = movies_semifinals[2]
+movie_semifinals4 = movies_semifinals[3]
+
+choice1_semifinals = input(f"Choose the winner of this matchup by entering (1) for {movie_semifinals1} or (2) for {movie_semifinals2}: ")
+
+if choice1_semifinals == "1":
+    winner1_semifinals = movie_semifinals1
+    print(f"The winner is {movie_semifinals1}!")
+elif choice1_semifinals == "2":
+    winner1_semifinals = movie_semifinals2
+    print(f"The winner is {movie_semifinals2}!")
+else:
+    print("Invalid choice.")
+
+choice2_semifinals = input(f"Choose the winner of this matchup by entering (1) for {movie_semifinals3} or (2) for {movie_semifinals4}: ")
+
+if choice2_semifinals == "1":
+    winner2_semifinals = movie_semifinals3
+    print(f"The winner is {movie_semifinals3}!")
+elif choice2_semifinals == "2":
+    winner2_semifinals = movie_semifinals4
+    print(f"The winner is {movie_semifinals4}!")
+else:
+    print("Invalid choice.")
+
+movies_final = [winner1_semifinals, winner2_semifinals]
+
+random.shuffle(movies_final)
+
+movie_final1 = movies_final[0]
+movie_final2 = movies_final[1]
+
+choice_final = input(f"Choose the winner of this movie tournament by entering (1) for {movie_final1} or (2) for {movie_final2}: ")
+
+if choice_final == "1":
+    winner_final = movie_final1
+    print(f"The winner of this movie tournament is {movie_final1}! Enjoy the movie!")
+elif choice_final == "2":
+    winner_final = movie_final2
+    print(f"The winner of this movie tournament is {movie_final2}! Enjoy the movie!")
+else:
+    print("Invalid choice.")
+```
+
+The program works as intended, and here's the proof from the ouput:
+
+```
+PS C:\Users\Business> & C:/Users/Business/AppData/Local/Programs/Python/Python38-32/python.exe c:/Users/Business/movie_tournament.py
+Please, enter the 1st movie: The Last Samurai
+Please, enter the 2nd movie: Mr. Baseball
+Please, enter the 3rd movie: You've Got Mail
+Please, enter the 4th movie: The Informant
+Please, enter the 5th movie: The Natural
+Please, enter the 6th movie: The Truman Show
+Please, enter the 7th movie: Benjamin Button
+Please, enter the 8th movie: your name.
+Choose the winner of this matchup by entering (1) for The Truman Show or (2) for Mr. Baseball: 2
+The winner is Mr. Baseball!
+Choose the winner of this matchup by entering (1) for your name. or (2) for The Natural: 2
+The winner is The Natural!
+Choose the winner of this matchup by entering (1) for The Last Samurai or (2) for Benjamin Button: 1
+The winner is The Last Samurai!
+Choose the winner of this matchup by entering (1) for The Informant or (2) for You've Got Mail: 2
+The winner is You've Got Mail!
+Choose the winner of this matchup by entering (1) for Mr. Baseball or (2) for The Last Samurai: 2
+The winner is The Last Samurai!
+Choose the winner of this matchup by entering (1) for The Natural or (2) for You've Got Mail: 2
+The winner is You've Got Mail!
+Choose the winner of this movie tournament by entering (1) for You've Got Mail or (2) for The Last Samurai: 2
+The winner of this movie tournament is The Last Samurai! Enjoy the movie!
+PS C:\Users\Business> 
+```
+
+A stunning success, though I already have a lot of ideas how to refine the code for the **2.0 version**.
+
+
+## Refining the Movie Tournament Program
