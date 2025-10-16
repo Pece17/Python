@@ -109,3 +109,35 @@ import random
 
 random.shuffle(movies_quarterfinals)
 ```
+
+I ask **ChatGPT** advice about how to fetch the **shuffled** movies without printing them, and learn the following method:
+
+```
+movie_quarterfinals1 = movies_quarterfinals[0]
+movie_quarterfinals2 = movies_quarterfinals[1]
+movie_quarterfinals3 = movies_quarterfinals[2]
+movie_quarterfinals4 = movies_quarterfinals[3]
+movie_quarterfinals5 = movies_quarterfinals[4]
+movie_quarterfinals6 = movies_quarterfinals[5]
+movie_quarterfinals7 = movies_quarterfinals[6]
+movie_quarterfinals8 = movies_quarterfinals[7]
+```
+
+Next I learn the method for creating matchups between 2 **variables**. We use ```f``` to format strings like this: ```print(f"The winner is {movie_quarterfinals1}!")```. Otherwise the output would literally show ```The winner is movie_quarterfinals1!```.:
+
+```
+choice1_quarterfinals = input(f"Choose the winner of this matchup by entering (1) for {movie_quarterfinals1} or (2) for {movie_quarterfinals2}: ")
+
+if choice1_quarterfinals == "1":
+    print(f"The winner is {movie_quarterfinals1}!")
+elif choice1_quarterfinals == "2":
+    print(f"The winner is {movie_quarterfinals2}!")
+else:
+    print("Invalid choice.")
+```
+
+At this point I don't yet know a more sophisticated method for handling all these matchups, so I'm just copy-pasting the code above with minor tweaks. The whole code looks as follows:
+
+```
+
+```
