@@ -498,3 +498,58 @@ while True:
 ```
 
 For more complex features, I'll make subheadings in this **GitHub** page for better readability.
+
+
+### Tackling Redundancy
+
+Perhaps the biggest issue of the current code is its redundancy: for example, using the same block of code 4 times during the quarterfinals and 2 times during the semifinals. I want to learn a more elegant way to write **Python**. Again, I ask **ChatGPT** for help.
+
+First on the chopping block are these 8 lines, because they are actually not needed:
+
+```
+movie_quarterfinals1 = movies_quarterfinals[0]
+movie_quarterfinals2 = movies_quarterfinals[1]
+movie_quarterfinals3 = movies_quarterfinals[2]
+movie_quarterfinals4 = movies_quarterfinals[3]
+movie_quarterfinals5 = movies_quarterfinals[4]
+movie_quarterfinals6 = movies_quarterfinals[5]
+movie_quarterfinals7 = movies_quarterfinals[6]
+movie_quarterfinals8 = movies_quarterfinals[7]
+```
+
+Instead, we can just do the following to create **tuples** (immutable or unchangeable objects), and use them as matchups. Each **tuple** is one matchup, and they are randomized because of ```random.shuffle```:
+
+```
+quarterfinals = [
+    (movies_quarterfinals[0], movies_quarterfinals[1]),
+    (movies_quarterfinals[2], movies_quarterfinals[3]),
+    (movies_quarterfinals[4], movies_quarterfinals[5]),
+    (movies_quarterfinals[6], movies_quarterfinals[7])
+]
+```
+
+The code before the matchups now looks like this:
+
+```
+movie1 = input("Please, enter the 1st movie: ")
+movie2 = input("Please, enter the 2nd movie: ")
+movie3 = input("Please, enter the 3rd movie: ")
+movie4 = input("Please, enter the 4th movie: ")
+movie5 = input("Please, enter the 5th movie: ")
+movie6 = input("Please, enter the 6th movie: ")
+movie7 = input("Please, enter the 7th movie: ")
+movie8 = input("Please, enter the 8th movie: ")
+
+movies_quarterfinals = [movie1, movie2, movie3, movie4, movie5, movie6, movie7, movie8]
+
+import random
+
+random.shuffle(movies_quarterfinals)
+
+quarterfinals = [
+    (movies_quarterfinals[0], movies_quarterfinals[1]),
+    (movies_quarterfinals[2], movies_quarterfinals[3]),
+    (movies_quarterfinals[4], movies_quarterfinals[5]),
+    (movies_quarterfinals[6], movies_quarterfinals[7])
+]
+```
