@@ -222,3 +222,55 @@ Choose the winner of this matchup by entering (1) for volkkari or (2) for lambo:
 The winner is lambo!
 PS C:\Users\Business> 
 ```
+
+We need a way to store the winners of the quarterfinals, so I ask **ChatGPT** to explain the method. I make the following additions to all the quarterfinals:
+
+```
+if choice1_quarterfinals == "1":
+    winner1_quarterfinals = movie_quarterfinals1
+    print(f"The winner is {movie_quarterfinals1}!")
+elif choice1_quarterfinals == "2":
+    winner1_quarterfinals = movie_quarterfinals2
+    print(f"The winner is {movie_quarterfinals2}!")
+else:
+    print("Invalid choice.")
+```
+
+Now I use the same logic for semifinals as I did for quarterfinals. We don't need to ```import random``` module again, though.
+
+```
+movies_semifinals = [winner1_quarterfinals, winner2_quarterfinals, winner3_quarterfinals, winner4_quarterfinals]
+
+random.shuffle(movies_semifinals)
+
+movie_semifinals1 = movies_semifinals[0]
+movie_semifinals2 = movies_semifinals[1]
+movie_semifinals3 = movies_semifinals[2]
+movie_semifinals4 = movies_semifinals[3]
+```
+
+Once again, we just copy-paste the matchup logic of the quarterfinals for the semifinals:
+
+```
+choice1_semifinals = input(f"Choose the winner of this matchup by entering (1) for {movie_semifinals1} or (2) for {movie_semifinals2}: ")
+
+if choice1_semifinals == "1":
+    winner1_semifinals = movie_semifinals1
+    print(f"The winner is {movie_semifinals1}!")
+elif choice1_semifinals == "2":
+    winner1_semifinals = movie_semifinals2
+    print(f"The winner is {movie_semifinals2}!")
+else:
+    print("Invalid choice.")
+```
+
+Next we shuffle the winners of the semifinals by using the previous logic, though this is not really necessary because there are only 2 movies left:
+
+```
+movies_final = [winner1_semifinals, winner2_semifinals]
+
+random.shuffle(movies_final)
+
+movie_final1 = movies_final[0]
+movie_final2 = movies_final[1]
+```
