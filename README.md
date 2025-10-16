@@ -479,7 +479,22 @@ Choose the winner of the 1st semifinal matchup by entering (1) for lancia or (2)
 The winner is lancia!
 ```
 
+Next I ask **ChatGPT** for help about how to create loops withing matchups, so that the program will not advance until either **1** or **2** has been entered. The method is ```while True```. I also reduce redundancy by deleting ```print(f"The winner is {movie_quarterfinals1}!")``` and similar lines. We already fetch the ```winner1_quarterfinals``` etc. **variables**, so we can just ```print``` the winner of the matchup after the ```while True``` loop has been completed. We use ```break``` statements to exit out of the loops. The matchups look like this now:
+
+```
+while True:
+    choice1_quarterfinals = input(f"Choose the winner of the 1st quarterfinal matchup by entering (1) for {movie_quarterfinals1} or (2) for {movie_quarterfinals2}: ")
+
+    if choice1_quarterfinals == "1":
+        winner1_quarterfinals = movie_quarterfinals1
+        break
+    elif choice1_quarterfinals == "2":
+        winner1_quarterfinals = movie_quarterfinals2
+        break
+    else:
+        print("Invalid choice.")
+
+print(f"The winner is {winner1_quarterfinals}!")
+```
+
 For more complex features, I'll make subheadings in this **GitHub** page for better readability.
-
-
-### Tackling Redundancy
