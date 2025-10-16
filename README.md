@@ -136,8 +136,89 @@ else:
     print("Invalid choice.")
 ```
 
-At this point I don't yet know a more sophisticated method for handling all these matchups, so I'm just copy-pasting the code above with minor tweaks. The whole code looks as follows:
+At this point I don't yet know a more sophisticated method for handling all these matchups, so I'm just literally copy-pasting the code above and changing the **variable** names. Now the whole code looks as follows:
 
 ```
+movie1 = input("Please, enter the 1st movie: ")
+movie2 = input("Please, enter the 2nd movie: ")
+movie3 = input("Please, enter the 3rd movie: ")
+movie4 = input("Please, enter the 4th movie: ")
+movie5 = input("Please, enter the 5th movie: ")
+movie6 = input("Please, enter the 6th movie: ")
+movie7 = input("Please, enter the 7th movie: ")
+movie8 = input("Please, enter the 8th movie: ")
 
+movies_quarterfinals = [movie1, movie2, movie3, movie4, movie5, movie6, movie7, movie8]
+
+import random
+
+random.shuffle(movies_quarterfinals)
+
+movie_quarterfinals1 = movies_quarterfinals[0]
+movie_quarterfinals2 = movies_quarterfinals[1]
+movie_quarterfinals3 = movies_quarterfinals[2]
+movie_quarterfinals4 = movies_quarterfinals[3]
+movie_quarterfinals5 = movies_quarterfinals[4]
+movie_quarterfinals6 = movies_quarterfinals[5]
+movie_quarterfinals7 = movies_quarterfinals[6]
+movie_quarterfinals8 = movies_quarterfinals[7]
+
+choice1_quarterfinals = input(f"Choose the winner of this matchup by entering (1) for {movie_quarterfinals1} or (2) for {movie_quarterfinals2}: ")
+
+if choice1_quarterfinals == "1":
+    print(f"The winner is {movie_quarterfinals1}!")
+elif choice1_quarterfinals == "2":
+    print(f"The winner is {movie_quarterfinals2}!")
+else:
+    print("Invalid choice.")
+
+choice2_quarterfinals = input(f"Choose the winner of this matchup by entering (1) for {movie_quarterfinals3} or (2) for {movie_quarterfinals4}: ")
+
+if choice2_quarterfinals == "1":
+    print(f"The winner is {movie_quarterfinals3}!")
+elif choice2_quarterfinals == "2":
+    print(f"The winner is {movie_quarterfinals4}!")
+else:
+    print("Invalid choice.")
+
+choice3_quarterfinals = input(f"Choose the winner of this matchup by entering (1) for {movie_quarterfinals5} or (2) for {movie_quarterfinals6}: ")
+
+if choice3_quarterfinals == "1":
+    print(f"The winner is {movie_quarterfinals5}!")
+elif choice3_quarterfinals == "2":
+    print(f"The winner is {movie_quarterfinals6}!")
+else:
+    print("Invalid choice.")
+
+choice4_quarterfinals = input(f"Choose the winner of this matchup by entering (1) for {movie_quarterfinals7} or (2) for {movie_quarterfinals8}: ")
+
+if choice4_quarterfinals == "1":
+    print(f"The winner is {movie_quarterfinals7}!")
+elif choice4_quarterfinals == "2":
+    print(f"The winner is {movie_quarterfinals8}!")
+else:
+    print("Invalid choice.")
+```
+
+I'm new to **Python**, but I can already tell that this is not the ideal way to code. There's a lot of redundancy when you could definitely make the code more dynamic. However, we can refine the code later on. What's important is that the code works, and I get the following output:
+
+```
+PS C:\Users\Business> & C:/Users/Business/AppData/Local/Programs/Python/Python38-32/python.exe c:/Users/Business/movie_tournament.py
+Please, enter the 1st movie: volvo
+Please, enter the 2nd movie: lancia
+Please, enter the 3rd movie: mersu
+Please, enter the 4th movie: volkkari
+Please, enter the 5th movie: ferrari
+Please, enter the 6th movie: lambo
+Please, enter the 7th movie: porsche
+Please, enter the 8th movie: maybach
+Choose the winner of this matchup by entering (1) for maybach or (2) for porsche: 1
+The winner is maybach!
+Choose the winner of this matchup by entering (1) for lancia or (2) for mersu: 1
+The winner is lancia!
+Choose the winner of this matchup by entering (1) for ferrari or (2) for volvo: 1
+The winner is ferrari!
+Choose the winner of this matchup by entering (1) for volkkari or (2) for lambo: 2
+The winner is lambo!
+PS C:\Users\Business> 
 ```
