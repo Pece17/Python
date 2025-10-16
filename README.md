@@ -7,7 +7,7 @@ A project for learning the basics of **Python** programming language. My purpose
 
 - [Software Installation and Setup](https://github.com/Pece17/Python?tab=readme-ov-file#software-installation-and-setup)
 - [Creating a Movie Tournament Program](https://github.com/Pece17/Python/blob/main/README.md#creating-a-movie-tournament-program)
-- [Refining the Movie Tournament Program]()
+- [Refining the Movie Tournament Program](https://github.com/Pece17/Python/blob/main/README.md#refining-the-movie-tournament-program)
 
 
 ## Software Installation and Setup
@@ -445,3 +445,34 @@ A stunning success, though I already have a lot of ideas how to refine the code 
 
 
 ## Refining the Movie Tournament Program
+
+As it stands, the code of the movie tournament program is quite rudimentary. I have come up with the following ideas to make the program more sophisticated:
+
+- make the matchups and the whole tournament less redundant and more dynamic to reduce the amount of unnecessary code
+- specify the stage of the tournament during each matchup, for example: ```Choose the winner of the 4th quarterfinal matchup by entering (1) for The Informant or (2) for You've Got Mail: ```
+- loops to start the matchups again if the user enters a wrong input
+- an option to redo each matchup in case of mistakes
+- the ability to go back in stages
+- choose between 8 or 16 movies for the tournament
+
+Specifying the stage of the tournament during each matchup is simple enough, just changing what the **input** message says:
+
+```
+choice1_semifinals = input(f"Choose the winner of the 1st semifinal matchup by entering (1) for {movie_semifinals1} or (2) for {movie_semifinals2}: ")
+
+if choice1_semifinals == "1":
+    winner1_semifinals = movie_semifinals1
+    print(f"The winner is {movie_semifinals1}!")
+elif choice1_semifinals == "2":
+    winner1_semifinals = movie_semifinals2
+    print(f"The winner is {movie_semifinals2}!")
+else:
+    print("Invalid choice.")
+```
+
+The output of that looks like this:
+
+```
+Choose the winner of the 1st semifinal matchup by entering (1) for lancia or (2) for volvo: 1
+The winner is lancia!
+```
