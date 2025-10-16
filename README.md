@@ -80,4 +80,32 @@ Please, enter the 3rd movie:
 
 Though, this is probably not the most elegant way to code, especially if there would be many more **variables** to input. A some kind of dynamic method might be ideal, but this will do for this program.
 
-Now we need to somehow shuffle/randomize the 8 movies into 4 pairs.
+Now we need to somehow shuffle/randomize the 8 movies into 4 pairs. I **Google** this problem and find the following method:
+
+```
+import random
+
+mylist = ["apple", "banana", "cherry"]
+random.shuffle(mylist)
+
+print(mylist)
+```
+
+Based on that, I make the following additions to my code:
+
+```
+movie1 = input("Please, enter the 1st movie: ")
+movie2 = input("Please, enter the 2nd movie: ")
+movie3 = input("Please, enter the 3rd movie: ")
+movie4 = input("Please, enter the 4th movie: ")
+movie5 = input("Please, enter the 5th movie: ")
+movie6 = input("Please, enter the 6th movie: ")
+movie7 = input("Please, enter the 7th movie: ")
+movie8 = input("Please, enter the 8th movie: ")
+
+movies_quarterfinals = [movie1, movie2, movie3, movie4, movie5, movie6, movie7, movie8]
+
+import random
+
+random.shuffle(movies_quarterfinals)
+```
