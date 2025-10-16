@@ -453,7 +453,8 @@ As it stands, the code of the movie tournament program is quite rudimentary. I h
 - loops to start the matchups again if the user enters a wrong input
 - an option to redo each matchup in case of mistakes
 - the ability to go back in stages
-- choose between 8 or 16 movies for the tournament
+- the ability to choose between 8 or 16 movies for the tournament
+- being able to fetch movie lists from **.txt** or other files
 
 Specifying the stage of the tournament during each matchup is simple enough, just changing what the **input** message says:
 
@@ -476,3 +477,8 @@ The output of that looks like this:
 Choose the winner of the 1st semifinal matchup by entering (1) for lancia or (2) for volvo: 1
 The winner is lancia!
 ```
+
+For more complex features, I'll make subheadings in this **GitHub** page for better readability.
+
+
+### Tackling Redundancy
