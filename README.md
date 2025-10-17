@@ -457,6 +457,7 @@ As it stands, the code of the movie tournament program is quite rudimentary. I h
 - the ability to choose between 8 or 16 movies for the tournament
 - being able to fetch movie lists from **.txt files**, **CSV files**, or other files
 - the program shouldn't automatically terminate when a tournament is finished—it should ask whether to redo with the same movies, to start a completely new tournament, or to close the program
+- a better user interface instead of just command line
 
 Specifying the stage of the tournament during each matchup is simple enough, just changing what the **input** message says:
 
