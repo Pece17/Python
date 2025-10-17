@@ -560,3 +560,35 @@ We can also reduce redundancy by changing how the program collects the movies. I
 ```
 movies_quarterfinals = [input(f"Please, enter movie No. {i+1}: ") for i in range(8)]
 ```
+
+The beginning of the code now looks like this:
+
+```
+movies_quarterfinals = [input(f"Please, enter movie No. {i+1}: ") for i in range(8)]
+
+import random
+
+random.shuffle(movies_quarterfinals)
+
+quarterfinals = [
+    (movies_quarterfinals[0], movies_quarterfinals[1]),
+    (movies_quarterfinals[2], movies_quarterfinals[3]),
+    (movies_quarterfinals[4], movies_quarterfinals[5]),
+    (movies_quarterfinals[6], movies_quarterfinals[7])
+]
+```
+
+The code works as intended:
+
+```
+PS C:\Users\Business> & C:/Users/Business/AppData/Local/Programs/Python/Python38-32/python.exe c:/Users/Business/movie_tournament_v1.1.py
+Please, enter movie No. 1: asd
+Please, enter movie No. 2: asd
+Please, enter movie No. 3: sad
+Please, enter movie No. 4: asd
+Please, enter movie No. 5: asd
+Please, enter movie No. 6: asd
+Please, enter movie No. 7: asd
+Please, enter movie No. 8: asd
+```
+
