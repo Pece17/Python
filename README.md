@@ -452,10 +452,11 @@ As it stands, the code of the movie tournament program is quite rudimentary. I h
 - make the matchups and the whole tournament less redundant and more dynamic to reduce the amount of unnecessary code
 - specify the stage of the tournament during each matchup, for example: ```Choose the winner of the 4th quarterfinal matchup by entering (1) for The Informant or (2) for You've Got Mail: ```
 - loops to start the matchups again if the user enters a wrong input
-- an option to redo each matchup in case of mistakes
+- an option to redo any matchup if the user makes a typing mistake or changes their mind
 - the ability to go back in stages
 - the ability to choose between 8 or 16 movies for the tournament
-- being able to fetch movie lists from **.txt** or other files
+- being able to fetch movie lists from **.txt files**, **CSV files**, or other files
+- the program shouldn't automatically terminate when a tournament is finished—it should ask whether to redo with the same movies, to start a completely new tournament, or to close the program
 
 Specifying the stage of the tournament during each matchup is simple enough, just changing what the **input** message says:
 
