@@ -600,6 +600,24 @@ winners_quarterfinals = []
 
 Next we need to create a new dynamic **loop** for all the quarterfinal matchups:
 
-```
+- ```for i``` creates a **for-loop**
+- ```(movie1, movie2)``` are the movies for each 
 
+```
+for i, (movie1, movie2) in enumerate(quarterfinals, start=1):
+    while True:
+        choice = input(f"Choose the winner of the quarterfinal matchup No. {i} by entering (1) for {movie1} or (2) for {movie2}: ")
+        
+        if choice == "1":
+            winners_quarterfinals.append(movie1)
+            print(f"The winner of the quarterfinal matchup No. {i} is {movie1}!")
+            break
+        
+        elif choice == "2":
+            winners_quarterfinals.append(movie2)
+            print(f"The winner of the quarterfinal matchup No. {i} is {movie2}!")
+            break
+        
+        else:
+            print("Invalid choice. Please, enter (1) or (2).")
 ```
