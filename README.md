@@ -592,3 +592,14 @@ Please, enter movie No. 7: asd
 Please, enter movie No. 8: asd
 ```
 
+Next we initialize a ```winners_quarterfinals``` **list**, that will be used in the quarterfinals:
+
+```
+winners_quarterfinals = []
+```
+
+Next we need to create a new dynamic **loop** for all the quarterfinal matchups:
+
+```
+
+```
