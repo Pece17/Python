@@ -554,3 +554,9 @@ quarterfinals = [
     (movies_quarterfinals[6], movies_quarterfinals[7])
 ]
 ```
+
+We can also reduce redundancy by changing how the program collects the movies. I'll try to explain how this line of code works: **square brackets** ```[]``` immediately create a variable and a **list** called ```movies_quarterfinals```; within the **square brackets** there is ```input``` **function**, **parentheses** ```()```, **f-string** ```f``` for enabling **variables** and **expressions** inside **curly brackets** ```{}```, the written **string** inside **double quotes** ```""```, and ```{i+1}``` within the **string**. It is apparently common practice to use ```i``` for simple loops where the meaning is obvious. The ```+1``` is important because **Python** starts **lists** from **0**, and in this case we want a list between **1**–**8**.
+
+```
+movies_quarterfinals = [input(f"Please, enter movie No. {i+1}: ") for i in range(8)]
+```
