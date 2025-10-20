@@ -1,6 +1,8 @@
 import random
 
-while True:
+running = True
+
+while running:
     movies_quarterfinals = [input(f"Please, enter movie No. {i+1}: ") for i in range(8)]
 
     random.shuffle(movies_quarterfinals)
@@ -59,28 +61,34 @@ while True:
 
     random.shuffle(winners_semifinals)
 
-    grandfinal = [
-        (winners_semifinals[0], winners_semifinals[1])
-    ]
+    movie1, movie2 = winners_semifinals
 
-    for i, (movie1, movie2) in enumerate(grandfinal, start=1):
-        while True:
-            choice = input(f"Choose the winner of the movie tournament by entering (1) for {movie1} or (2) for {movie2}: ")
+    while True:
+        choice = input(f"Choose the winner of the movie tournament by entering (1) for {movie1} or (2) for {movie2}: ")
             
-            if choice == "1":
-                winner_grandfinal = movie1
-                print(f"The winner of the movie tournament is {movie1}! Enjoy the movie!")
-                break
+        if choice == "1":
+            winner_grandfinal = movie1
+            print(f"The winner of the movie tournament is {movie1}! Enjoy the movie!")
+            break
             
-            elif choice == "2":
-                winner_grandfinal = movie2
-                print(f"The winner of the movie tournament is {movie2}! Enjoy the movie!")
-                break
+        elif choice == "2":
+            winner_grandfinal = movie2
+            print(f"The winner of the movie tournament is {movie2}! Enjoy the movie!")
+            break
             
-            else:
-                print("Invalid choice. Please, enter (1) or (2).")
+        else:
+            print("Invalid choice. Please, enter (1) or (2).")
 
-    again = input("Enter (1) to redo the previous tournament, enter (2) to create a new tournament, and enter (3) to exit: ")
-    if again == "3":
-        print("Thanks for playing!")
-        break
+    while True:
+        again = input("Enter (1) to create a new tournament or enter (2) to exit: ")
+
+        if again == "1":
+            break
+        
+        elif again == "2":
+            print("Thanks for playing!")
+            running = False
+            break
+
+        else:
+            print("Invalid choice.")
