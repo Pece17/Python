@@ -601,8 +601,10 @@ winners_quarterfinals = []
 
 Next we need to create a new dynamic **loop** for all the quarterfinal matchups:
 
-- ```for i``` creates a **for-loop**
-- ```(movie1, movie2)``` are the movies for each 
+- ```for i``` creates a **for-loop**.
+- ```(movie1, movie2)``` are the movies for each **tuple**—each **tuple** represents one matchup, as we learned previously.
+- ```in``` connects the **loop** **variable** (```i```) to the **iterable** ```enumerate(quarterfinals, start=1)```. In **Python**, an **iterable** is any object that you can **loop** over.
+- 
 
 ```
 for i, (movie1, movie2) in enumerate(quarterfinals, start=1):
