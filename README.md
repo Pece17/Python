@@ -449,9 +449,9 @@ A stunning success, though I already have a lot of ideas how to refine the code 
 
 As it stands, the code of the movie tournament program is quite rudimentary. I have come up with the following ideas to make the program more sophisticated:
 
-- make the matchups and the whole tournament less redundant and more dynamic to reduce the amount of unnecessary code
-- specify the stage of the tournament during each matchup, for example: ```Choose the winner of the 4th quarterfinal matchup by entering (1) for The Informant or (2) for You've Got Mail: ```
-- loops to start the matchups again if the user enters a wrong input
+- make the matchups and the whole tournament less redundant and more dynamic to reduce the amount of unnecessary code ✅
+- specify the stage of the tournament during each matchup, for example: ```Choose the winner of the 4th quarterfinal matchup by entering (1) for The Informant or (2) for You've Got Mail: ``` ✅
+- loops to start the matchups again if the user enters a wrong input ✅
 - an option to redo any matchup if the user makes a typing mistake or changes their mind
 - the ability to go back in stages
 - the ability to choose between 8 or 16 movies for the tournament
@@ -688,3 +688,168 @@ random.shuffle(winners_semifinals)
         else:
             print("Invalid choice. Please, enter (1) or (2).")
 ```
+
+Finally, we create an infinite **loop** for the whole tournament, and the possibilities to either redo or exit the program:
+
+- We give the **variable** ```running``` the **boolean** value ```True```. A **boolean** is a type of value in programming that can be only one of two states: ```True``` or ```False```.
+- ```while running``` therefore behaves exactly like ```while True```.
+- We also create a loop at the end of the code where entering **1** will start the program again and entering **2** will change the value of ```running``` as ```False```, terminating the program and printing a goodbye message.
+
+```
+running = True
+
+while running:
+
+    (code of the program)
+
+    while True:
+        again = input("Enter (1) to to create a new tournament or enter (2) to exit: ")
+
+        if again == "1":
+            break
+        
+        elif again == "2":
+            print("Thanks for playing!")
+            running = False
+            break
+
+        else:
+            print("Invalid choice. Please, enter (1) or (2).")
+```
+
+The whole code now looks like this:
+
+```
+import random
+
+running = True
+
+while running:
+    movies_quarterfinals = [input(f"Please, enter movie No. {i+1}: ") for i in range(8)]
+
+    random.shuffle(movies_quarterfinals)
+
+    quarterfinals = [
+        (movies_quarterfinals[0], movies_quarterfinals[1]),
+        (movies_quarterfinals[2], movies_quarterfinals[3]),
+        (movies_quarterfinals[4], movies_quarterfinals[5]),
+        (movies_quarterfinals[6], movies_quarterfinals[7])
+    ]
+
+    winners_quarterfinals = []
+
+    for i, (movie1, movie2) in enumerate(quarterfinals, start=1):
+        while True:
+            choice = input(f"Choose the winner of the quarterfinal matchup No. {i} by entering (1) for {movie1} or (2) for {movie2}: ")
+            
+            if choice == "1":
+                winners_quarterfinals.append(movie1)
+                print(f"The winner of the quarterfinal matchup No. {i} is {movie1}!")
+                break
+            
+            elif choice == "2":
+                winners_quarterfinals.append(movie2)
+                print(f"The winner of the quarterfinal matchup No. {i} is {movie2}!")
+                break
+            
+            else:
+                print("Invalid choice. Please, enter (1) or (2).")
+
+    random.shuffle(winners_quarterfinals)
+
+    semifinals = [
+        (winners_quarterfinals[0], winners_quarterfinals[1]),
+        (winners_quarterfinals[2], winners_quarterfinals[3])
+    ]
+
+    winners_semifinals = []
+
+    for i, (movie1, movie2) in enumerate(semifinals, start=1):
+        while True:
+            choice = input(f"Choose the winner of the semifinal matchup No. {i} by entering (1) for {movie1} or (2) for {movie2}: ")
+            
+            if choice == "1":
+                winners_semifinals.append(movie1)
+                print(f"The winner of the semifinal matchup No. {i} is {movie1}!")
+                break
+            
+            elif choice == "2":
+                winners_semifinals.append(movie2)
+                print(f"The winner of the semifinal matchup No. {i} is {movie2}!")
+                break
+            
+            else:
+                print("Invalid choice. Please, enter (1) or (2).")
+
+    random.shuffle(winners_semifinals)
+
+    movie1, movie2 = winners_semifinals
+
+    while True:
+        choice = input(f"Choose the winner of the movie tournament by entering (1) for {movie1} or (2) for {movie2}: ")
+            
+        if choice == "1":
+            winner_grandfinal = movie1
+            print(f"The winner of the movie tournament is {movie1}! Enjoy the movie!")
+            break
+            
+        elif choice == "2":
+            winner_grandfinal = movie2
+            print(f"The winner of the movie tournament is {movie2}! Enjoy the movie!")
+            break
+            
+        else:
+            print("Invalid choice. Please, enter (1) or (2).")
+
+    while True:
+        again = input("Enter (1) to create a new tournament or enter (2) to exit: ")
+
+        if again == "1":
+            break
+        
+        elif again == "2":
+            print("Thanks for playing!")
+            running = False
+            break
+
+        else:
+            print("Invalid choice.")
+```
+
+The program works as intended (I really should finally watch **You've Got Mail**...):
+
+```
+PS C:\Users\Business> & C:/Users/Business/AppData/Local/Programs/Python/Python38-32/python.exe c:/Users/Business/movie_tournament_v1.1.py
+Please, enter movie No. 1: The Truman Show
+Please, enter movie No. 2: You've Got Mail
+Please, enter movie No. 3: your name.
+Please, enter movie No. 4: The Natural
+Please, enter movie No. 5: The Informant
+Please, enter movie No. 6: Kramer vs. Kramer
+Please, enter movie No. 7: Mr. Baseball
+Please, enter movie No. 8: Kenny
+Choose the winner of the quarterfinal matchup No. 1 by entering (1) for Mr. Baseball or (2) for You've Got Mail: 2
+The winner of the quarterfinal matchup No. 1 is You've Got Mail!
+Choose the winner of the quarterfinal matchup No. 2 by entering (1) for The Truman Show or (2) for Kramer vs. Kramer: 1
+The winner of the quarterfinal matchup No. 2 is The Truman Show!
+Choose the winner of the quarterfinal matchup No. 3 by entering (1) for Kenny or (2) for The Informant: 2
+The winner of the quarterfinal matchup No. 3 is The Informant!
+Choose the winner of the quarterfinal matchup No. 4 by entering (1) for your name. or (2) for The Natural: 2
+The winner of the quarterfinal matchup No. 4 is The Natural!
+Choose the winner of the semifinal matchup No. 1 by entering (1) for The Truman Show or (2) for You've Got Mail: 2
+The winner of the semifinal matchup No. 1 is You've Got Mail!
+Choose the winner of the semifinal matchup No. 2 by entering (1) for The Informant or (2) for The Natural: 2
+The winner of the semifinal matchup No. 2 is The Natural!
+Choose the winner of the movie tournament by entering (1) for The Natural or (2) for You've Got Mail: 2
+The winner of the movie tournament is You've Got Mail! Enjoy the movie!
+Enter (1) to create a new tournament or enter (2) to exit: 3
+Invalid choice.
+Enter (1) to create a new tournament or enter (2) to exit: 2
+Thanks for playing!
+PS C:\Users\Business>
+```
+
+We have now succesfully made the program more dynamic and less redundant. Onto further improvements.
+
+
+### Placeholder Title
