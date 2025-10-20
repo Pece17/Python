@@ -630,3 +630,17 @@ for i, (movie1, movie2) in enumerate(quarterfinals, start=1):
         else:
             print("Invalid choice. Please, enter (1) or (2).")
 ```
+
+After this we **shuffle** the ```winners_quarterfinals``` **list**, create **tuples** (matchups) from the ```winners_quarterfinals``` **items**, and initialize the ```winners_semifinals``` **list**:
+
+```
+random.shuffle(winners_quarterfinals)
+
+    semifinals = [
+        (winners_quarterfinals[0], winners_quarterfinals[1]),
+        (winners_quarterfinals[2], winners_quarterfinals[3])
+    ]
+
+    winners_semifinals = []
+```
+
