@@ -606,6 +606,11 @@ Next we need to create a new dynamic **loop** for all the quarterfinal matchups:
 - ```in``` connects the **loop** **variable** (```i```) to the **iterable** ```enumerate(quarterfinals, start=1)```. In **Python**, an **iterable** is any object that you can **loop** over (**list**, **tuple**, **string**, etc.).
 - ```enumerate()``` adds a counter to your **iterable** and returns an **enumerable object** (**iterator**) that produces pairs of (**index**, **item**). Basically, ```enumerate()``` adds a number to each item while looping.
 - ```quarterfinals``` is the list of matchups to loop over (**iterable**) and ```start=1``` sets the starting number for the **index** as **1**, because otherwise **Python** will set it as **0**.
+- ```while True``` we have already covered previously. ```choice = input(f"Choose the winner of the quarterfinal matchup No. {i} by entering (1) for {movie1} or (2) for {movie2}: ")``` gets the matchup number dynamically, whereas before it was hardcoded.
+- In ```winners_quarterfinals.append(movie1)```, ```append()``` adds an element (```movie1```) to the end of the list (```winners_quarterfinals```).
+- ```break``` stops the current loop immediately. After ```break```, **Python** jumps to the code right after the loop.
+
+We can use the same logic in the semifinals and the final too:
 
 ```
 for i, (movie1, movie2) in enumerate(quarterfinals, start=1):
