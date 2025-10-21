@@ -866,3 +866,20 @@ running = True
 
 movies_quarterfinals = []
 ```
+
+Next we'll add ```if not movies_quarterfinals:```, where ```if``` checks whether the condition is **True** and ```not``` reverses the truth value of the **expression**. In this context it means that ```if not``` statement checks whether the ```movies_quarterfinals``` **list** is empty, and asks to input movies if the list *is* empty or skips the stage if the list *already has movies*.
+
+```
+while running:
+    if not movies_quarterfinals:
+        movies_quarterfinals = [input(f"Please, enter movie No. {i+1}: ") for i in range(8)]
+
+    random.shuffle(movies_quarterfinals)
+
+    quarterfinals = [
+        (movies_quarterfinals[0], movies_quarterfinals[1]),
+        (movies_quarterfinals[2], movies_quarterfinals[3]),
+        (movies_quarterfinals[4], movies_quarterfinals[5]),
+        (movies_quarterfinals[6], movies_quarterfinals[7])
+    ]
+```
