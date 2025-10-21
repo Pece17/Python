@@ -883,3 +883,25 @@ while running:
         (movies_quarterfinals[6], movies_quarterfinals[7])
     ]
 ```
+
+Finally, we add another ```elif``` (**else if**) **clause** to the **statement** at the end of the code where ```movies_quarterfinals = []``` resets the **movie list** and creates a fresh tournament.
+
+```
+while True:
+        again = input("Enter (1) to replay the tournament with the same movies, enter (2) to create a new tournament, or enter (3) to exit: ")
+
+        if again == "1":
+            break
+        
+        elif again == "2":
+            movies_quarterfinals = []
+            break
+        
+        elif again == "3":
+            print("Thanks for playing!")
+            running = False
+            break
+
+        else:
+            print("Invalid choice.")
+```
