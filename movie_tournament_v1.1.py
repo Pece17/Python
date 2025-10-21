@@ -21,16 +21,16 @@ while running:
 
     for i, (movie1, movie2) in enumerate(quarterfinals, start=1):
         while True:
-            choice = input(f"Choose the winner of the quarterfinal matchup No. {i} by entering (1) for {movie1} or (2) for {movie2}: ")
+            choice = input(f"Choose the winner of the quarterfinal matchup No. {i} by entering (1) for '{movie1}' or (2) for '{movie2}': ")
             
             if choice == "1":
                 winners_quarterfinals.append(movie1)
-                print(f"The winner of the quarterfinal matchup No. {i} is {movie1}!")
+                print(f"The winner of the quarterfinal matchup No. {i} is '{movie1}'!")
                 break
             
             elif choice == "2":
                 winners_quarterfinals.append(movie2)
-                print(f"The winner of the quarterfinal matchup No. {i} is {movie2}!")
+                print(f"The winner of the quarterfinal matchup No. {i} is '{movie2}'!")
                 break
             
             else:
@@ -47,16 +47,16 @@ while running:
 
     for i, (movie1, movie2) in enumerate(semifinals, start=1):
         while True:
-            choice = input(f"Choose the winner of the semifinal matchup No. {i} by entering (1) for {movie1} or (2) for {movie2}: ")
+            choice = input(f"Choose the winner of the semifinal matchup No. {i} by entering (1) for '{movie1}' or (2) for '{movie2}': ")
             
             if choice == "1":
                 winners_semifinals.append(movie1)
-                print(f"The winner of the semifinal matchup No. {i} is {movie1}!")
+                print(f"The winner of the semifinal matchup No. {i} is '{movie1}'!")
                 break
             
             elif choice == "2":
                 winners_semifinals.append(movie2)
-                print(f"The winner of the semifinal matchup No. {i} is {movie2}!")
+                print(f"The winner of the semifinal matchup No. {i} is '{movie2}'!")
                 break
             
             else:
@@ -67,16 +67,16 @@ while running:
     movie1, movie2 = winners_semifinals
 
     while True:
-        choice = input(f"Choose the winner of the movie tournament by entering (1) for {movie1} or (2) for {movie2}: ")
+        choice = input(f"Choose the winner of the movie tournament by entering (1) for '{movie1}' or (2) for '{movie2}': ")
             
         if choice == "1":
             winner_grandfinal = movie1
-            print(f"The winner of the movie tournament is {movie1}! Enjoy the movie!")
+            print(f"The winner of the movie tournament is '{movie1}'! Enjoy the movie!")
             break
             
         elif choice == "2":
             winner_grandfinal = movie2
-            print(f"The winner of the movie tournament is {movie2}! Enjoy the movie!")
+            print(f"The winner of the movie tournament is '{movie2}'! Enjoy the movie!")
             break
             
         else:
