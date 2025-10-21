@@ -9,7 +9,8 @@ A project for learning the basics of **Python** programming language. My purpose
 - [Creating a Movie Tournament Program](https://github.com/Pece17/Python/blob/main/README.md#creating-a-movie-tournament-program)
 - [Refining the Movie Tournament Program](https://github.com/Pece17/Python/blob/main/README.md#refining-the-movie-tournament-program)
     - [Tackling Redundancy](https://github.com/Pece17/Python/blob/main/README.md#tackling-redundancy)
-    - [The Ability to Replay the Tournament with Previously Entered Movies](https://github.com/Pece17/Python?tab=readme-ov-file#the-ability-to-replay-the-tournament-with-previously-entered-movies)
+    - [Replay the Tournament with Previously Entered Movies]()
+    - [Change Entered Movies Before Starting the Tournament]()
 
 
 ## Software Installation and Setup
@@ -459,6 +460,7 @@ As it stands, the code of the movie tournament program is quite rudimentary. I h
 - being able to fetch movie lists from **.txt files**, **CSV files**, or other files
 - the program shouldn't automatically terminate when a tournament is finished—it should ask whether to redo with the same movies, to start a completely new tournament, or to close the program ✅
 - a better user interface instead of just command line
+- general polishing at the very end of the project
 
 Specifying the stage of the tournament during each matchup is simple enough, just changing what the **input** message says:
 
@@ -853,7 +855,7 @@ PS C:\Users\Business>
 We have now succesfully made the program more dynamic and less redundant. Onto further improvements.
 
 
-### The Ability to Replay the Tournament with Previously Entered Movies
+### Replay the Tournament with Previously Entered Movies
 
 It is burdensome having to always enter the movies again if you want to replay the tournament. We need to add a way store the movies that were entered during the first playthrough, so that the user can choose to redo the tournament with said movies without further inputs.
 
@@ -1047,13 +1049,4 @@ while running:
 Moving on to other improvements.
 
 
-### Placeholder Title
-
-<details>
-
-```python
-# Your code goes here
-print("Hello, world!")
-```
-
-</details>
+### Change Entered Movies Before Starting the Tournament
