@@ -2,8 +2,11 @@ import random
 
 running = True
 
+movies_quarterfinals = []
+
 while running:
-    movies_quarterfinals = [input(f"Please, enter movie No. {i+1}: ") for i in range(8)]
+    if not movies_quarterfinals:
+        movies_quarterfinals = [input(f"Please, enter movie No. {i+1}: ") for i in range(8)]
 
     random.shuffle(movies_quarterfinals)
 
@@ -80,12 +83,16 @@ while running:
             print("Invalid choice. Please, enter (1) or (2).")
 
     while True:
-        again = input("Enter (1) to create a new tournament or enter (2) to exit: ")
+        again = input("Enter (1) to replay the tournament with the same movies, enter (2) to create a new tournament, or enter (3) to exit: ")
 
         if again == "1":
             break
         
         elif again == "2":
+            movies_quarterfinals = []
+            break
+        
+        elif again == "3":
             print("Thanks for playing!")
             running = False
             break
