@@ -1053,3 +1053,34 @@ Moving on to other improvements.
 
 Sometimes the user can make a mistake or change their mind when it comes to the movies that will participate in a tournament. There should be an ability to correct and change the entered movies before starting the tournament proper.
 
+I make the following additions with the help of **ChatGPT**, starting from ```confirmed = False``` and ending before ```random.shuffle(movies_quarterfinals)```:
+
+- ```confirmed = False``` and ```while not confirmed``` mean that the **loop** will keep running until the **variable** ```confirmed``` is set to ```True```. Basically, ```while not confirmed``` is ```while True``` at this moment, which is why the **loop** runs.
+- 
+
+```
+while running:
+    if not movies_quarterfinals:
+        movies_quarterfinals = [input(f"Please, enter movie No. {i+1}: ") for i in range(8)]
+
+    confirmed = False
+
+    while not confirmed:
+        print("Your movies for the tournament:")
+        for i, movie in enumerate(movies_quarterfinals, start=1):
+            print(f"({i}) {movie}")
+
+        change = input("Enter the number of the movie to change it or enter (c) to confirm and start the tournament: ")
+
+        if change.lower() == "c":
+            confirmed = True
+
+        elif change.isdigit() and 1 <= int(change) <= 8:
+            idx = int(change) - 1
+            movies_quarterfinals[idx] = input(f"Correct or enter a new movie for position {change}: ")
+        
+        else:
+            print("Invalid input. Please, try again.")
+    
+    random.shuffle(movies_quarterfinals)
+```
