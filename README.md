@@ -1050,7 +1050,6 @@ Moving on to other improvements.
 ### Placeholder Title
 
 <details>
-<summary>Click to expand code</summary>
 
 ```python
 # Your code goes here
