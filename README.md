@@ -854,3 +854,15 @@ We have now succesfully made the program more dynamic and less redundant. Onto f
 
 
 ### The Ability to Replay the Tournament with Previously Entered Movies
+
+It is burdensome having to always enter the movies again if you want to replay the tournament. We need to add a way store the movies that were entered during the first playthrough, so that the user can choose to redo the tournament with said movies without further inputs.
+
+First, let's add ```movies_quarterfinals = []``` at the beginning of the code. This stores the **list of movies** outside the **main loop** and gives the user the option to reuse it.
+
+```
+import random
+
+running = True
+
+movies_quarterfinals = []
+```
