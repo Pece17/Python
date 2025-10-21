@@ -9,8 +9,8 @@ A project for learning the basics of **Python** programming language. My purpose
 - [Creating a Movie Tournament Program](https://github.com/Pece17/Python/blob/main/README.md#creating-a-movie-tournament-program)
 - [Refining the Movie Tournament Program](https://github.com/Pece17/Python/blob/main/README.md#refining-the-movie-tournament-program)
     - [Tackling Redundancy](https://github.com/Pece17/Python/blob/main/README.md#tackling-redundancy)
-    - [Replay the Tournament with Previously Entered Movies]()
-    - [Change Entered Movies Before Starting the Tournament]()
+    - [Replay the Tournament with Previously Entered Movies](https://github.com/Pece17/Python/tree/main?tab=readme-ov-file#replay-the-tournament-with-previously-entered-movies)
+    - [Change Entered Movies Before Starting the Tournament](https://github.com/Pece17/Python/tree/main?tab=readme-ov-file#change-entered-movies-before-starting-the-tournament)
 
 
 ## Software Installation and Setup
@@ -1050,3 +1050,6 @@ Moving on to other improvements.
 
 
 ### Change Entered Movies Before Starting the Tournament
+
+Sometimes the user can make a mistake or change their mind when it comes to the movies that will participate in a tournament. There should be an ability to correct and change the entered movies before starting the tournament proper.
+
