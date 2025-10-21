@@ -9,6 +9,7 @@ A project for learning the basics of **Python** programming language. My purpose
 - [Creating a Movie Tournament Program](https://github.com/Pece17/Python/blob/main/README.md#creating-a-movie-tournament-program)
 - [Refining the Movie Tournament Program](https://github.com/Pece17/Python/blob/main/README.md#refining-the-movie-tournament-program)
     - [Tackling Redundancy](https://github.com/Pece17/Python/blob/main/README.md#tackling-redundancy)
+    - [The Ability to Replay the Tournament with Previously Entered Movies]()
 
 
 ## Software Installation and Setup
@@ -852,4 +853,4 @@ PS C:\Users\Business>
 We have now succesfully made the program more dynamic and less redundant. Onto further improvements.
 
 
-### Placeholder Title
+### The Ability to Replay the Tournament with Previously Entered Movies
