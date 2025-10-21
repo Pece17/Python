@@ -905,3 +905,146 @@ while True:
         else:
             print("Invalid choice.")
 ```
+
+I run the program and the new feature seems to work, though the matchups are randomized again in the quarterfinals. I'm not sure if this is better vs. using the same matchups as in the first playthrough. It's a matter of opinion really—I'll leave the code as is for now.
+
+```
+PS C:\Users\Business> & C:/Users/Business/AppData/Local/Programs/Python/Python38-32/python.exe c:/Users/Business/movie_tournament_v1.1.py
+Please, enter movie No. 1: It's a Wonderful Life
+Please, enter movie No. 2: Failure to Launch
+Please, enter movie No. 3: The Pursuit of Happyness
+Please, enter movie No. 4: Mr. Baseball
+Please, enter movie No. 5: The Natural
+Please, enter movie No. 6: The Truman Show
+Please, enter movie No. 7: Sleepless in Seattle
+Please, enter movie No. 8: You've Got Mail
+Choose the winner of the quarterfinal matchup No. 1 by entering (1) for Sleepless in Seattle or (2) for The Natural: 1
+The winner of the quarterfinal matchup No. 1 is Sleepless in Seattle!
+Choose the winner of the quarterfinal matchup No. 2 by entering (1) for It's a Wonderful Life or (2) for The Pursuit of Happyness: 2
+The winner of the quarterfinal matchup No. 2 is The Pursuit of Happyness!
+Choose the winner of the quarterfinal matchup No. 3 by entering (1) for You've Got Mail or (2) for Failure to Launch: 1
+The winner of the quarterfinal matchup No. 3 is You've Got Mail!
+Choose the winner of the quarterfinal matchup No. 4 by entering (1) for Mr. Baseball or (2) for The Truman Show: 1
+The winner of the quarterfinal matchup No. 4 is Mr. Baseball!
+Choose the winner of the semifinal matchup No. 1 by entering (1) for Sleepless in Seattle or (2) for The Pursuit of Happyness: 1
+The winner of the semifinal matchup No. 1 is Sleepless in Seattle!
+Choose the winner of the semifinal matchup No. 2 by entering (1) for Mr. Baseball or (2) for You've Got Mail: 2
+The winner of the semifinal matchup No. 2 is You've Got Mail!
+Choose the winner of the movie tournament by entering (1) for Sleepless in Seattle or (2) for You've Got Mail: 2
+The winner of the movie tournament is You've Got Mail! Enjoy the movie!
+Enter (1) to replay the tournament with the same movies, enter (2) to create a new tournament, or enter (3) to exit: 4
+Invalid choice.
+Enter (1) to replay the tournament with the same movies, enter (2) to create a new tournament, or enter (3) to exit: 1
+Choose the winner of the quarterfinal matchup No. 1 by entering (1) for It's a Wonderful Life or (2) for You've Got Mail:
+```
+
+The whole code looks like this now:
+
+```
+import random
+
+running = True
+
+movies_quarterfinals = []
+
+while running:
+    if not movies_quarterfinals:
+        movies_quarterfinals = [input(f"Please, enter movie No. {i+1}: ") for i in range(8)]
+
+    random.shuffle(movies_quarterfinals)
+
+    quarterfinals = [
+        (movies_quarterfinals[0], movies_quarterfinals[1]),
+        (movies_quarterfinals[2], movies_quarterfinals[3]),
+        (movies_quarterfinals[4], movies_quarterfinals[5]),
+        (movies_quarterfinals[6], movies_quarterfinals[7])
+    ]
+
+    winners_quarterfinals = []
+
+    for i, (movie1, movie2) in enumerate(quarterfinals, start=1):
+        while True:
+            choice = input(f"Choose the winner of the quarterfinal matchup No. {i} by entering (1) for {movie1} or (2) for {movie2}: ")
+            
+            if choice == "1":
+                winners_quarterfinals.append(movie1)
+                print(f"The winner of the quarterfinal matchup No. {i} is {movie1}!")
+                break
+            
+            elif choice == "2":
+                winners_quarterfinals.append(movie2)
+                print(f"The winner of the quarterfinal matchup No. {i} is {movie2}!")
+                break
+            
+            else:
+                print("Invalid choice. Please, enter (1) or (2).")
+
+    random.shuffle(winners_quarterfinals)
+
+    semifinals = [
+        (winners_quarterfinals[0], winners_quarterfinals[1]),
+        (winners_quarterfinals[2], winners_quarterfinals[3])
+    ]
+
+    winners_semifinals = []
+
+    for i, (movie1, movie2) in enumerate(semifinals, start=1):
+        while True:
+            choice = input(f"Choose the winner of the semifinal matchup No. {i} by entering (1) for {movie1} or (2) for {movie2}: ")
+            
+            if choice == "1":
+                winners_semifinals.append(movie1)
+                print(f"The winner of the semifinal matchup No. {i} is {movie1}!")
+                break
+            
+            elif choice == "2":
+                winners_semifinals.append(movie2)
+                print(f"The winner of the semifinal matchup No. {i} is {movie2}!")
+                break
+            
+            else:
+                print("Invalid choice. Please, enter (1) or (2).")
+
+    random.shuffle(winners_semifinals)
+
+    movie1, movie2 = winners_semifinals
+
+    while True:
+        choice = input(f"Choose the winner of the movie tournament by entering (1) for {movie1} or (2) for {movie2}: ")
+            
+        if choice == "1":
+            winner_grandfinal = movie1
+            print(f"The winner of the movie tournament is {movie1}! Enjoy the movie!")
+            break
+            
+        elif choice == "2":
+            winner_grandfinal = movie2
+            print(f"The winner of the movie tournament is {movie2}! Enjoy the movie!")
+            break
+            
+        else:
+            print("Invalid choice. Please, enter (1) or (2).")
+
+    while True:
+        again = input("Enter (1) to replay the tournament with the same movies, enter (2) to create a new tournament, or enter (3) to exit: ")
+
+        if again == "1":
+            break
+        
+        elif again == "2":
+            movies_quarterfinals = []
+            break
+        
+        elif again == "3":
+            print("Thanks for playing!")
+            running = False
+            break
+
+        else:
+            print("Invalid choice.")
+```
+
+Moving on to other improvements.
+
+
+### Placeholder Title
