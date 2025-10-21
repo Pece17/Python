@@ -9,7 +9,7 @@ A project for learning the basics of **Python** programming language. My purpose
 - [Creating a Movie Tournament Program](https://github.com/Pece17/Python/blob/main/README.md#creating-a-movie-tournament-program)
 - [Refining the Movie Tournament Program](https://github.com/Pece17/Python/blob/main/README.md#refining-the-movie-tournament-program)
     - [Tackling Redundancy](https://github.com/Pece17/Python/blob/main/README.md#tackling-redundancy)
-    - [The Ability to Replay the Tournament with Previously Entered Movies]()
+    - [The Ability to Replay the Tournament with Previously Entered Movies](https://github.com/Pece17/Python?tab=readme-ov-file#the-ability-to-replay-the-tournament-with-previously-entered-movies)
 
 
 ## Software Installation and Setup
