@@ -1055,7 +1055,7 @@ Sometimes the user can make a mistake or change their mind when it comes to the 
 
 I make the following additions with the help of **ChatGPT**, starting from ```confirmed = False``` and ending before ```random.shuffle(movies_quarterfinals)```:
 
-- ```confirmed = False``` and ```while not confirmed``` mean that the **loop** will keep running until the **variable** ```confirmed``` is set to ```True```. Basically, ```while not confirmed``` is ```while True``` at this moment, which is why the **loop** runs.
+- ```confirmed = False``` and ```while not confirmed``` mean that the **loop** will keep running until the **variable** ```confirmed``` is set to ```True```. Though, ```while not confirmed``` is ```while True``` at this moment, which is why the **loop** runs.
 - 
 
 ```
