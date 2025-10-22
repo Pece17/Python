@@ -1057,7 +1057,7 @@ I make the following additions with the help of **ChatGPT**, starting from ```co
 
 - ```confirmed = False``` and ```while not confirmed``` mean that the **loop** will keep running until the **variable** ```confirmed``` is set to ```True```. Though, ```while not confirmed``` is ```while True``` at this moment, which is why the **loop** runs.
 - ```print("Your movies for the tournament:")``` precedes the list of entered movies.
-- ```for i, movie in enumerate(movies_quarterfinals, start=1):``` is the same logic we have used previously: ````for i``` creates a **for-loop**, ```movie``` is the variable for this **for-loop**, and ```enumerate(movies_quarterfinals, start=1)``` adds a number for each of the 8 movies starting from **1**.
+- ```for i, movie in enumerate(movies_quarterfinals, start=1):``` is the same logic we have used previously: ```for i``` creates a **for-loop**, ```movie``` is the variable for this **for-loop**, and ```enumerate(movies_quarterfinals, start=1)``` adds a number for each of the 8 movies starting from **1**.
 - ```print(f"({i}) '{movie}'")``` will print, for example, ```(7) 'The Last Samurai'```.
 - ```change = input()``` is self-explanatory.
 - ```if change.lower() == "c":``` returns the letter **c** as lower case. It doesn't matter whether the user enters a lowercase or uppercase **c**. If **c** is entered, ```confirmed = True``` will activate and end the **loop**.
