@@ -1063,7 +1063,8 @@ I make the following additions with the help of **ChatGPT**, starting from ```co
 - ```if change.lower() == "c":``` returns the letter **c** as lower case. It doesn't matter whether the user enters a lowercase or uppercase **c**. If **c** is entered, ```confirmed = True``` will activate and end the **loop**.
 - In ```elif change.isdigit() and 1 <= int(change) <= 8:```: ```change.isdigit()``` checks whether the user's input consists only of **digits** (**0**–**9**), ```and``` is a **logical** or **Boolean operator** that combines the two **conditions** and returns ```True``` only if both are **True**, and ```1 <= int(change) <= 8:``` checks that the user typed a number between **1**–**8**. ```<=``` is a comparison operator that means **less than or equal to** and ```int(change)``` converts a **string** (text) or **float** (decimal number) into an **integer** (whole number).
 - In ```idx = int(change) - 1```: ```idx``` (short for **index)** is a **variable** and ```int(change) - 1``` changes the entered **string** into an **integer** and substracts **1**. **Python lists** are **0-indexed**, meaning the first **element** has **index 0**, but the user sees the **list** starting at **1**. So to map the user's choice to the correct **list element**, **1** is subtracted.
-- ```movies_quarterfinals[idx] = input(f"Correct or enter a new movie for position {change}: ")```
+- In ```movies_quarterfinals[idx] = input(f"Correct or enter a new movie for position ({change}): ")```: ```movies_quarterfinals[idx]``` is used to modify elements in the ```movies_quarterfinals``` **list** where ```[idx]``` is the calculated **position** in the **list**. ```input(f"Correct or enter a new movie for position ({change}): ")``` will print out, for example: ```Correct or enter a new movie for position (7): ```.
+- ```else:``` and ```print("Invalid input. Please, try again.")``` we have used previously—an error message is printed if the user enters anything other than the letter **c** or numbers between **1**—**8**, after which the ```while not confirmed:``` **loop** will start from the beginning.
 
 ```
 while running:
@@ -1084,10 +1085,187 @@ while running:
 
         elif change.isdigit() and 1 <= int(change) <= 8:
             idx = int(change) - 1
-            movies_quarterfinals[idx] = input(f"Correct or enter a new movie for position {change}: ")
+            movies_quarterfinals[idx] = input(f"Correct or enter a new movie for position ({change}): ")
         
         else:
             print("Invalid input. Please, try again.")
     
     random.shuffle(movies_quarterfinals)
 ```
+
+The new function works as intended:
+
+```
+PS C:\Users\Business> & C:/Users/Business/AppData/Local/Programs/Python/Python38-32/python.exe c:/Users/Business/movie_tournament_v1.1.py
+Please, enter movie No. 1: Lancia
+Please, enter movie No. 2: Nissan
+Please, enter movie No. 3: Toyota
+Please, enter movie No. 4: Ferrari
+Please, enter movie No. 5: Opel
+Please, enter movie No. 6: Maybach
+Please, enter movie No. 7: Volvo
+Please, enter movie No. 8: Lada
+Your movies for the tournament:
+(1) 'Lancia'
+(2) 'Nissan'
+(3) 'Toyota'
+(4) 'Ferrari'
+(5) 'Opel'
+(6) 'Maybach'
+(7) 'Volvo'
+(8) 'Lada'
+Enter the number of the movie to change it or enter (c) to confirm and start the tournament: 9
+Invalid input. Please, try again.
+Your movies for the tournament:
+(1) 'Lancia'
+(2) 'Nissan'
+(3) 'Toyota'
+(4) 'Ferrari'
+(5) 'Opel'
+(6) 'Maybach'
+(7) 'Volvo'
+(8) 'Lada'
+Enter the number of the movie to change it or enter (c) to confirm and start the tournament: 8
+Correct or enter a new movie for position (8): BMW
+Your movies for the tournament:
+(1) 'Lancia'
+(2) 'Nissan'
+(3) 'Toyota'
+(4) 'Ferrari'
+(5) 'Opel'
+(6) 'Maybach'
+(7) 'Volvo'
+(8) 'BMW'
+Enter the number of the movie to change it or enter (c) to confirm and start the tournament: c
+Choose the winner of the quarterfinal matchup No. 1 by entering (1) for 'Volvo' or (2) for 'Maybach': 
+```
+
+The full code of the program:
+
+```
+import random
+
+running = True
+
+movies_quarterfinals = []
+
+while running:
+    if not movies_quarterfinals:
+        movies_quarterfinals = [input(f"Please, enter movie No. {i+1}: ") for i in range(8)]
+
+    confirmed = False
+
+    while not confirmed:
+        print("Your movies for the tournament:")
+        for i, movie in enumerate(movies_quarterfinals, start=1):
+            print(f"({i}) '{movie}'")
+
+        change = input("Enter the number of a movie to change it or enter (c) to confirm and start the tournament: ")
+
+        if change.lower() == "c":
+            confirmed = True
+
+        elif change.isdigit() and 1 <= int(change) <= 8:
+            idx = int(change) - 1
+            movies_quarterfinals[idx] = input(f"Correct or enter a new movie for position ({change}): ")
+        
+        else:
+            print("Invalid input. Please, try again.")
+    
+    random.shuffle(movies_quarterfinals)
+
+    quarterfinals = [
+        (movies_quarterfinals[0], movies_quarterfinals[1]),
+        (movies_quarterfinals[2], movies_quarterfinals[3]),
+        (movies_quarterfinals[4], movies_quarterfinals[5]),
+        (movies_quarterfinals[6], movies_quarterfinals[7])
+    ]
+
+    winners_quarterfinals = []
+
+    for i, (movie1, movie2) in enumerate(quarterfinals, start=1):
+        while True:
+            choice = input(f"Choose the winner of the quarterfinal matchup No. {i} by entering (1) for '{movie1}' or (2) for '{movie2}': ")
+            
+            if choice == "1":
+                winners_quarterfinals.append(movie1)
+                print(f"The winner of the quarterfinal matchup No. {i} is '{movie1}'!")
+                break
+            
+            elif choice == "2":
+                winners_quarterfinals.append(movie2)
+                print(f"The winner of the quarterfinal matchup No. {i} is '{movie2}'!")
+                break
+            
+            else:
+                print("Invalid choice. Please, enter (1) or (2).")
+
+    random.shuffle(winners_quarterfinals)
+
+    semifinals = [
+        (winners_quarterfinals[0], winners_quarterfinals[1]),
+        (winners_quarterfinals[2], winners_quarterfinals[3])
+    ]
+
+    winners_semifinals = []
+
+    for i, (movie1, movie2) in enumerate(semifinals, start=1):
+        while True:
+            choice = input(f"Choose the winner of the semifinal matchup No. {i} by entering (1) for '{movie1}' or (2) for '{movie2}': ")
+            
+            if choice == "1":
+                winners_semifinals.append(movie1)
+                print(f"The winner of the semifinal matchup No. {i} is '{movie1}'!")
+                break
+            
+            elif choice == "2":
+                winners_semifinals.append(movie2)
+                print(f"The winner of the semifinal matchup No. {i} is '{movie2}'!")
+                break
+            
+            else:
+                print("Invalid choice. Please, enter (1) or (2).")
+
+    random.shuffle(winners_semifinals)
+
+    movie1, movie2 = winners_semifinals
+
+    while True:
+        choice = input(f"Choose the winner of the movie tournament by entering (1) for '{movie1}' or (2) for '{movie2}': ")
+            
+        if choice == "1":
+            winner_grandfinal = movie1
+            print(f"The winner of the movie tournament is '{movie1}'! Enjoy the movie!")
+            break
+            
+        elif choice == "2":
+            winner_grandfinal = movie2
+            print(f"The winner of the movie tournament is '{movie2}'! Enjoy the movie!")
+            break
+            
+        else:
+            print("Invalid choice. Please, enter (1) or (2).")
+
+    while True:
+        again = input("Enter (1) to replay the tournament with the same movies, enter (2) to create a new tournament, or enter (3) to exit: ")
+
+        if again == "1":
+            break
+        
+        elif again == "2":
+            movies_quarterfinals = []
+            break
+        
+        elif again == "3":
+            print("Thanks for playing!")
+            running = False
+            break
+
+        else:
+            print("Invalid choice.")
+```
+
+Moving on.
+
+
+### Placeholder Title
