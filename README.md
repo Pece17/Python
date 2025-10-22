@@ -1061,8 +1061,9 @@ I make the following additions with the help of **ChatGPT**, starting from ```co
 - ```print(f"({i}) '{movie}'")``` will print, for example, ```(7) 'The Last Samurai'```.
 - ```change = input()``` is self-explanatory.
 - ```if change.lower() == "c":``` returns the letter **c** as lower case. It doesn't matter whether the user enters a lowercase or uppercase **c**. If **c** is entered, ```confirmed = True``` will activate and end the **loop**.
-- In ```elif change.isdigit() and 1 <= int(change) <= 8:```: ```change.isdigit()``` checks whether the user's input consists only of **digits** (**0**–**9**); ```and``` is a **logical** or **Boolean operator** that combines the two **conditions** and returns ```True``` only if both are **True**; and ```1 <= int(change) <= 8:``` checks that the user typed a number between **1**–**8**. ```<=``` is a comparison operator that means **less than or equal to** and ```int(change)``` converts a **string** (text) or **float** (decimal number) into an **integer** (whole number).
-- 
+- In ```elif change.isdigit() and 1 <= int(change) <= 8:```: ```change.isdigit()``` checks whether the user's input consists only of **digits** (**0**–**9**), ```and``` is a **logical** or **Boolean operator** that combines the two **conditions** and returns ```True``` only if both are **True**, and ```1 <= int(change) <= 8:``` checks that the user typed a number between **1**–**8**. ```<=``` is a comparison operator that means **less than or equal to** and ```int(change)``` converts a **string** (text) or **float** (decimal number) into an **integer** (whole number).
+- In ```idx = int(change) - 1```: ```idx``` (short for **index)** is a **variable** and ```int(change) - 1``` changes the entered **string** into an **integer** and substracts **1**. **Python lists** are **0-indexed**, meaning the first **element** has **index 0**, but the user sees the **list** starting at **1**. So to map the user's choice to the correct **list element**, **1** is subtracted.
+- ```movies_quarterfinals[idx] = input(f"Correct or enter a new movie for position {change}: ")```
 
 ```
 while running:
