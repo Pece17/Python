@@ -8,6 +8,25 @@ while running:
     if not movies_quarterfinals:
         movies_quarterfinals = [input(f"Please, enter movie No. {i+1}: ") for i in range(8)]
 
+    confirmed = False
+
+    while not confirmed:
+        print("Your movies for the tournament:")
+        for i, movie in enumerate(movies_quarterfinals, start=1):
+            print(f"({i}) '{movie}'")
+
+        change = input("Enter the number of a movie to change it or enter (c) to confirm and start the tournament: ")
+
+        if change.lower() == "c":
+            confirmed = True
+
+        elif change.isdigit() and 1 <= int(change) <= 8:
+            idx = int(change) - 1
+            movies_quarterfinals[idx] = input(f"Correct or enter a new movie for position ({change}): ")
+        
+        else:
+            print("Invalid input. Please, try again.")
+    
     random.shuffle(movies_quarterfinals)
 
     quarterfinals = [
